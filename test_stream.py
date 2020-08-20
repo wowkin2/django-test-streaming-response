@@ -8,10 +8,10 @@ logging.basicConfig(format='%(asctime)s\t%(name)s\t%(levelname)s\t%(message)s',
 
 logger.info('Started downloading content')
 
-# Uncomment to check how sync view works
+# NOTE: Uncomment to check how SYNC view works
 # r = requests.get('http://localhost:8000/sse', stream=True)
 
-# To check how async view works
+# NOTE: To check how ASYNC view works
 r = requests.get('http://localhost:8000/sse_async', stream=True)
 
 r.raise_for_status()

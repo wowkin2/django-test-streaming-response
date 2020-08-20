@@ -4,16 +4,20 @@ import time
 
 from django.http import StreamingHttpResponse
 from base.sse import SSEResponse as SSE
-# from base.sse import SSE
+
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(format='%(asctime)s\t%(name)s\t%(levelname)s\t%(message)s',
-                    level=logging.INFO)
+logging.basicConfig(format='%(asctime)s\t%(name)s\t%(levelname)s\t%(message)s', level=logging.INFO)
 
 
-CONTENT_SIZE = int(2 ** 16 / 24)
+LINE_LENGTH = 24
+N_CHUNKS = 10
+CONTENT_SIZE = int(2 ** 16 / LINE_LENGTH) * N_CHUNKS
 TIME_SLEEP = 0.001
-logger.info(f'Configured: CONTENT_SIZE={CONTENT_SIZE}, TIME_SLEEP={TIME_SLEEP}')
+
+logger.info(f'Configured: '
+            f'CONTENT_SIZE={CONTENT_SIZE}, LINE_LENGTH={LINE_LENGTH}, '
+            f'N_CHUNKS={N_CHUNKS}, TIME_SLEEP={TIME_SLEEP}')
 
 
 def gen_message(msg):
