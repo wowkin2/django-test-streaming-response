@@ -1,3 +1,9 @@
+# About repository:
+This is a repository prepared for [answer on StackOverflow](https://stackoverflow.com/a/63452601/3722635) 
+to have ability to download code and test it.
+
+Question is about Django StreamingHttpResponse in async Django views. Look [here for more details](https://stackoverflow.com/a/63452601/3722635).
+
 # How to use it:
 
 ### Run Django web-server using Daphne:
