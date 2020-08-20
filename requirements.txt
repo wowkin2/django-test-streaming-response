@@ -1,0 +1,5 @@
+daphne
+django
+
+requests
+nest_asyncio
