@@ -7,8 +7,6 @@ from base.sse import SSEResponse as SSE
 
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(format='%(asctime)s\t%(name)s\t%(levelname)s\t%(message)s', level=logging.INFO)
-
 
 LINE_LENGTH = 24
 N_CHUNKS = 10
